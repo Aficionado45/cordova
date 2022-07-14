@@ -1,19 +1,16 @@
-name: Sync
-'on':
+name: Sync Files
+on:
   push:
     branches:
       - master
+  workflow_dispatch:
 jobs:
-  files:
-    name: Files
+  sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: adrianjost/files-sync-action@v1.0.1
+      - name: Checkout Repository
+        uses: actions/checkout@master
+      - name: Run GitHub File Sync
+        uses: BetaHuhn/repo-file-sync-action@v1
         with:
-          GITHUB_TOKEN: '${{ secrets.GH_PAT }}'
-          FILE_PATTERNS: |-
-            ^\.github\/workflows\/synced-.*\.yml$
-            ^LICENSE\.md$
-          TARGET_REPOS: |-
-            Aficionado45/electron-explorer
-            Aficionado45/web-app
+          GH_PAT: ${{ secrets.GH_PAT }}
