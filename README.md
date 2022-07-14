@@ -13,11 +13,13 @@
 ### Running on android devices will result in a blank screen for now, to resolve need to add some meta tags in `public\index.html`
 
 `＜script type="text/javascript" src="cordova.js"＞＜/script＞` 
-Inside body tag before </body>
+Inside body tag 
 
-`＜meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"＞
-＜meta name="format-detection" content="telephone=no"＞
-＜meta name="msapplication-tap-highlight" content="no"＞`
+`＜meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"＞`
+
+`＜meta name="format-detection" content="telephone=no"＞`
+
+`＜meta name="msapplication-tap-highlight" content="no"＞`
 
 Inside head tag
 
