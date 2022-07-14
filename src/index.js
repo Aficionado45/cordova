@@ -4,15 +4,21 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "cordova_script";
+import { Auth0Provider } from "@auth0/auth0-react";
 
 document.addEventListener(
   "deviceready",
   () => {
     ReactDOM.render(
       <React.StrictMode>
-        <div>
-          <App cordovaWork={true} />
-        </div>
+        <Auth0Provider
+         domain="dev-z313-qbx.us.auth0.com"
+         clientId="xrGshabZtBaDtQxkwGsx6A43A2Fa4P9Q"
+         redirectUri={window.location.origin}>
+          <div>
+            <App cordovaWork={true} />
+          </div>
+        </Auth0Provider>
       </React.StrictMode>,
       document.getElementById("root")
     );

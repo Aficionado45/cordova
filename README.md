@@ -10,6 +10,7 @@ reco init com.cordova "cordova"
 
 ```cli
 cordova platform add android
+cordova platform add browser
 ```
 ### To Start Localhost on Browser
 ```cli
